@@ -31,8 +31,8 @@ public class FoodTruckServiceImpl implements FoodTruckService {
 	}
 
 	@Override
-	public FoodTruck getOne(long locationid) {
-		return repository.findById(locationid).get();
+	public FoodTruck getById(long id) {
+		return repository.findById(id).get();
 	}
 
 	@Override
@@ -41,15 +41,15 @@ public class FoodTruckServiceImpl implements FoodTruckService {
 	}
 
 	@Override
-	public void delete(long locationid) {
+	public void delete(long id) {
 
-		repository.deleteById(locationid);
+		repository.deleteById(id);
 
 	}
 
 	@Override
 	public List<FoodTruck> getByApplicant(String applicant) {
-		
+
 		return repository.findByApplicant(applicant);
 	}
 

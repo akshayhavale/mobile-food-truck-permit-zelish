@@ -27,6 +27,7 @@ public class ReadableFoodTruckPopulator {
 		target.setStatus(source.getStatus());
 		target.setX(source.getX());
 		target.setY(source.getY());
+		target.setId(source.getId());
 
 		return target;
 	}

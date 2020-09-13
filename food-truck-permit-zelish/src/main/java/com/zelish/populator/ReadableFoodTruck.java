@@ -5,6 +5,8 @@ import java.util.Date;
 import com.zelish.model.Location;
 
 public class ReadableFoodTruck {
+	
+	private Long id; 
 
 	private Long locationid;
 
@@ -224,6 +226,14 @@ public class ReadableFoodTruck {
 
 	public void setLocation(Location location) {
 		this.location = location;
+	}
+
+	public Long getId() {
+		return id;
+	}
+
+	public void setId(Long id) {
+		this.id = id;
 	}
 
 }
