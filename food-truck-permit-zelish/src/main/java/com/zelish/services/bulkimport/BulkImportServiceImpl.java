@@ -4,15 +4,13 @@ import java.nio.file.Files;
 import java.nio.file.Path;
 import java.nio.file.Paths;
 
-import javax.servlet.ServletConfig;
 import javax.servlet.ServletContext;
 
 import org.springframework.stereotype.Service;
-import org.springframework.web.context.ServletConfigAware;
 import org.springframework.web.context.ServletContextAware;
 import org.springframework.web.multipart.MultipartFile;
 
-import com.zelish.services.FileAdapter;
+import com.zelish.util.FileAdapter;
 
 @Service
 public class BulkImportServiceImpl implements BulkImportService, ServletContextAware {
