@@ -2,11 +2,13 @@ package com.zelish;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
+import org.springframework.stereotype.Component;
 
 import springfox.documentation.swagger2.annotations.EnableSwagger2;
 
 @EnableSwagger2
 @SpringBootApplication
+@Component
 public class FoodTruckPermitZelishApplication {
 
 	public static void main(String[] args) {
