@@ -1,7 +1,10 @@
 package com.zelish.util;
 
-import com.zelish.model.FoodTruck;
+import java.util.List;
 
+import com.zelish.model.FoodTruck;
+import com.zelish.populator.ReadableFoodTruck;
+import com.zelish.populator.ReadableFoodTruckPopulator;
 
 public class FoodTruckMapper {
 
@@ -28,8 +31,22 @@ public class FoodTruckMapper {
 		target.setStatus(source.getStatus());
 		target.setX(source.getX());
 		target.setY(source.getY());
-
+		target.setId(source.getId());
 		return target;
+	}
+
+	public List<ReadableFoodTruck> listMap(List<FoodTruck> soruceList, List<ReadableFoodTruck> targetList) {
+
+		for (FoodTruck source : soruceList) {
+			ReadableFoodTruck target = new ReadableFoodTruck();
+			ReadableFoodTruckPopulator populator = new ReadableFoodTruckPopulator();
+			target = populator.populate(source, target);
+
+			targetList.add(target);
+
+		}
+
+		return targetList;
 	}
 
 }

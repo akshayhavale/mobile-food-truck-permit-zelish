@@ -14,14 +14,14 @@ public interface FoodTruckService {
 	// update
 	public FoodTruck update(FoodTruck foodTruck, long locationid);
 
-	// get by locationid
-	public FoodTruck getOne(long locationid);
+	// get by id
+	public FoodTruck getById(long id);
 
 	// get all
 	public List<FoodTruck> getAll();
 
-	// delete by locationid
-	public void delete(long locationid);
+	// delete by id
+	public void delete(long id);
 
 	// get by applicant
 	public List<FoodTruck> getByApplicant(String applicant);
@@ -31,7 +31,5 @@ public interface FoodTruckService {
 
 	// get by status
 	public List<FoodTruck> getByStatus(String status);
-	
-	
 
 }

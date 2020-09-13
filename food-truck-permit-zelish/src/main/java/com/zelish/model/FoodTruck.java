@@ -5,16 +5,22 @@ import java.util.Date;
 import javax.persistence.Column;
 import javax.persistence.Embedded;
 import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Table;
 import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
 
 @Entity
-@Table(name = "FOOD_TRUCK_DETAILS")
+@Table(name = "FOOD_TRUCK")
 public class FoodTruck {
 
 	@Id
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
+	@Column(name = "FOOD_TRUCK_ID")
+	private Long id;
+
 	@Column(name = "LOCATION_ID")
 	private Long locationid;
 
@@ -89,11 +95,12 @@ public class FoodTruck {
 	public FoodTruck() {
 	}
 
-	public FoodTruck(Long locationid, String applicant, String facultyType, long cnn, String locationDescription,
-			String address, String blocklot, String block, String lot, String status, String foodItems, int x, int y,
-			int latitude, int longitude, String schedule, Date noiSent, Date approved, Date received,
-			boolean priorPermit, Date expirationDate, Location location) {
+	public FoodTruck(Long id, Long locationid, String applicant, String facultyType, long cnn,
+			String locationDescription, String address, String blocklot, String block, String lot, String status,
+			String foodItems, int x, int y, int latitude, int longitude, String schedule, Date noiSent, Date approved,
+			Date received, boolean priorPermit, Date expirationDate, Location location) {
 		super();
+		this.id = id;
 		this.locationid = locationid;
 		this.applicant = applicant;
 		this.facultyType = facultyType;
@@ -116,6 +123,14 @@ public class FoodTruck {
 		this.priorPermit = priorPermit;
 		this.expirationDate = expirationDate;
 		this.location = location;
+	}
+
+	public Long getId() {
+		return id;
+	}
+
+	public void setId(Long id) {
+		this.id = id;
 	}
 
 	public Long getLocationid() {
