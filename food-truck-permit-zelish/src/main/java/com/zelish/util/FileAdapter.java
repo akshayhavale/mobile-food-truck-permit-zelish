@@ -179,7 +179,7 @@ public class FileAdapter {
 				foodTruck.setX(Double.valueOf(record.get("X")));
 			}
 			if (nonNull(record.get("Y"))&&!record.get("Y").isEmpty()) {
-				foodTruck.setX(Double.valueOf(record.get("Y")));
+				foodTruck.setY(Double.valueOf(record.get("Y")));
 			}
 			foodTruck.setId(0L);
 			

@@ -21,9 +21,9 @@ public class FoodTruckServiceImpl implements FoodTruckService {
 	}
 
 	@Override
-	public FoodTruck update(FoodTruck source, long locationid) {
+	public FoodTruck update(FoodTruck source, long id) {
 
-		FoodTruck target = repository.getOne(locationid);
+		FoodTruck target = repository.findById(id).get();
 		FoodTruckMapper mapper = new FoodTruckMapper();
 
 		FoodTruck saveEntity = mapper.map(source, target);

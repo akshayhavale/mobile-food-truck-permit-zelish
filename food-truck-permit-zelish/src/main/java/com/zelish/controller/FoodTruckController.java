@@ -23,6 +23,7 @@ import com.zelish.exceptions.ResourceNotFoundException;
 import com.zelish.facade.foodtruck.FoodTruckFacade;
 import com.zelish.populator.PersistableFoodTruck;
 import com.zelish.populator.ReadableFoodTruck;
+import com.zelish.populator.ReadableFoodTruckList;
 import com.zelish.services.bulkimport.BulkImportService;
 
 import io.swagger.annotations.Api;
@@ -115,15 +116,18 @@ public class FoodTruckController {
 	
 	@GetMapping("/foodtrucks")
 	@ResponseStatus(code = HttpStatus.OK)
-	@ApiOperation(httpMethod = "GET", value = "Get all Food Trucks, Get all Food Truck Entities", produces = "application/json", response = List.class)
-	public @ResponseBody List<ReadableFoodTruck> getAll() throws ResourceNotFoundException {
+	@ApiOperation(httpMethod = "GET", value = "Get all Food Trucks, Get all Food Truck Entities", produces = "application/json", response = ReadableFoodTruckList.class)
+	public @ResponseBody ReadableFoodTruckList getAll() throws ResourceNotFoundException {
 		try {
 
 			List<ReadableFoodTruck> list = foodTruckFacade.getAll();
+			ReadableFoodTruckList readableFoodTruckList = new ReadableFoodTruckList();
+			readableFoodTruckList.setCount(list.size());
+			readableFoodTruckList.setFoodTrucks(list);
 			if (list == null) {
 				throw new ResourceNotFoundException("COULD NOT ABLE TO FETCH PROPERLY");
 			} else {
-				return list;
+				return readableFoodTruckList;
 			}
 		} catch (Exception e) {
 			throw new ResourceNotFoundException("COULD NOT ABLE TO FETCH PROPERLY");
@@ -139,11 +143,14 @@ public class FoodTruckController {
 	
 	@GetMapping("/foodtruck/applicant/{applicant}")
 	@ResponseStatus(code = HttpStatus.OK)
-	@ApiOperation(httpMethod = "GET", value = "Get Details By Applicant, This will Get Food Truck Entity By Applicant", produces = "application/json", response = List.class)
-	public @ResponseBody List<ReadableFoodTruck> getByApplicant(@PathVariable(name = "applicant") String applicant) throws ResourceNotFoundException {
+	@ApiOperation(httpMethod = "GET", value = "Get Details By Applicant, This will Get Food Truck Entity By Applicant", produces = "application/json", response = ReadableFoodTruckList.class)
+	public @ResponseBody ReadableFoodTruckList getByApplicant(@PathVariable(name = "applicant") String applicant) throws ResourceNotFoundException {
 		try {
-			List<ReadableFoodTruck> readableFoodTruckList = foodTruckFacade.getByApplicant(applicant);
-			if (readableFoodTruckList == null) {
+			List<ReadableFoodTruck> list = foodTruckFacade.getByApplicant(applicant);
+			ReadableFoodTruckList readableFoodTruckList = new ReadableFoodTruckList();
+			readableFoodTruckList.setCount(list.size());
+			readableFoodTruckList.setFoodTrucks(list);
+			if (list == null) {
 				throw new ResourceNotFoundException("NOT PROPER APPLICANT");
 			} else {
 				return readableFoodTruckList;
@@ -155,11 +162,14 @@ public class FoodTruckController {
 	
 	@GetMapping("/foodtruck/facility/{facilityType}")
 	@ResponseStatus(code = HttpStatus.OK)
-	@ApiOperation(httpMethod = "GET", value = "Get Details By facilityType, This will Get Food Truck Entity By facilityType", produces = "application/json", response = List.class)
-	public @ResponseBody List<ReadableFoodTruck> getByFacility(@PathVariable(name = "facilityType") String facilityType) throws ResourceNotFoundException {
+	@ApiOperation(httpMethod = "GET", value = "Get Details By facilityType, This will Get Food Truck Entity By facilityType", produces = "application/json", response = ReadableFoodTruckList.class)
+	public @ResponseBody ReadableFoodTruckList getByFacility(@PathVariable(name = "facilityType") String facilityType) throws ResourceNotFoundException {
 		try {
-			List<ReadableFoodTruck> readableFoodTruckList = foodTruckFacade.getByFacilityType(facilityType);
-			if (readableFoodTruckList == null) {
+			List<ReadableFoodTruck> list = foodTruckFacade.getByFacilityType(facilityType);
+			ReadableFoodTruckList readableFoodTruckList = new ReadableFoodTruckList();
+			readableFoodTruckList.setCount(list.size());
+			readableFoodTruckList.setFoodTrucks(list);
+			if (list == null) {
 				throw new ResourceNotFoundException("NOT PROPER FACILITY TYPE");
 			} else {
 				return readableFoodTruckList;
@@ -171,11 +181,14 @@ public class FoodTruckController {
 	
 	@GetMapping("/foodtruck/status/{status}")
 	@ResponseStatus(code = HttpStatus.OK)
-	@ApiOperation(httpMethod = "GET", value = "Get Details By status, This will Get Food Truck Entity By status", produces = "application/json", response = List.class)
-	public @ResponseBody List<ReadableFoodTruck> getByStatus(@PathVariable(name = "status") String status) throws ResourceNotFoundException {
+	@ApiOperation(httpMethod = "GET", value = "Get Details By status, This will Get Food Truck Entity By status", produces = "application/json", response = ReadableFoodTruckList.class)
+	public @ResponseBody ReadableFoodTruckList getByStatus(@PathVariable(name = "status") String status) throws ResourceNotFoundException {
 		try {
-			List<ReadableFoodTruck> readableFoodTruckList = foodTruckFacade.getByStatus(status);
-			if (readableFoodTruckList == null) {
+			List<ReadableFoodTruck> list = foodTruckFacade.getByStatus(status);
+			ReadableFoodTruckList readableFoodTruckList = new ReadableFoodTruckList();
+			readableFoodTruckList.setCount(list.size());
+			readableFoodTruckList.setFoodTrucks(list);
+			if (list == null) {
 				throw new ResourceNotFoundException("NOT PROPER STATUS");
 			} else {
 				return readableFoodTruckList;
@@ -187,11 +200,14 @@ public class FoodTruckController {
 
 	@GetMapping("/foodtruck/licence/expired")
 	@ResponseStatus(code = HttpStatus.OK)
-	@ApiOperation(httpMethod = "GET", value = "Get Food Trucks Licence Expired, This will Get Food Truck Entity Licence Expired", produces = "application/json", response = List.class)
-	public @ResponseBody List<ReadableFoodTruck> getLicenceExpired() throws ResourceNotFoundException {
+	@ApiOperation(httpMethod = "GET", value = "Get Food Trucks Licence Expired, This will Get Food Truck Entity Licence Expired", produces = "application/json", response = ReadableFoodTruckList.class)
+	public @ResponseBody ReadableFoodTruckList getLicenceExpired() throws ResourceNotFoundException {
 		try {
-			List<ReadableFoodTruck> readableFoodTruckList = foodTruckFacade.getExpiredLicence();
-			if (readableFoodTruckList == null) {
+			List<ReadableFoodTruck> list = foodTruckFacade.getExpiredLicence();
+			ReadableFoodTruckList readableFoodTruckList = new ReadableFoodTruckList();
+			readableFoodTruckList.setCount(list.size());
+			readableFoodTruckList.setFoodTrucks(list);
+			if (list == null) {
 				throw new ResourceNotFoundException("NOT PROPERLY FETCHED");
 			} else {
 				return readableFoodTruckList;
