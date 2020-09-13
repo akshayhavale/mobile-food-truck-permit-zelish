@@ -27,8 +27,8 @@ public class FoodTruck {
 	@Column(name = "APPLICANT")
 	private String applicant;
 
-	@Column(name = "FACULTY_TYPE")
-	private String facultyType;
+	@Column(name = "FACILITY_TYPE")
+	private String facilityType;
 
 	@Column(name = "CNN")
 	private long cnn;
@@ -103,7 +103,7 @@ public class FoodTruck {
 		this.id = id;
 		this.locationid = locationid;
 		this.applicant = applicant;
-		this.facultyType = facultyType;
+		this.facilityType = facilityType;
 		this.cnn = cnn;
 		this.locationDescription = locationDescription;
 		this.address = address;
@@ -149,12 +149,12 @@ public class FoodTruck {
 		this.applicant = applicant;
 	}
 
-	public String getFacultyType() {
-		return facultyType;
+	public String getFacilityType() {
+		return facilityType;
 	}
 
-	public void setFacultyType(String facultyType) {
-		this.facultyType = facultyType;
+	public void setFacilityType(String facilityType) {
+		this.facilityType = facilityType;
 	}
 
 	public long getCnn() {

@@ -13,7 +13,7 @@ public class PersistableFoodTruckPopulator {
 		target.setBlocklot(source.getBlocklot());
 		target.setCnn(source.getCnn());
 		target.setExpirationDate(source.getExpirationDate());
-		target.setFacultyType(source.getFacultyType());
+		target.setFacilityType(source.getFacilityType());
 		target.setFoodItems(source.getFoodItems());
 		target.setLatitude(source.getLatitude());
 		target.setLocation(source.getLocation());

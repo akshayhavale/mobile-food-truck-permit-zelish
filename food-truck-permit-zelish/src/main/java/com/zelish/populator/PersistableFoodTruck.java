@@ -10,7 +10,7 @@ public class PersistableFoodTruck {
 
 	private String applicant;
 
-	private String facultyType;
+	private String facilityType;
 
 	private long cnn;
 
@@ -66,12 +66,12 @@ public class PersistableFoodTruck {
 		this.applicant = applicant;
 	}
 
-	public String getFacultyType() {
-		return facultyType;
+	public String getFacilityType() {
+		return facilityType;
 	}
 
-	public void setFacultyType(String facultyType) {
-		this.facultyType = facultyType;
+	public void setFacilityType(String facilityType) {
+		this.facilityType = facilityType;
 	}
 
 	public long getCnn() {
