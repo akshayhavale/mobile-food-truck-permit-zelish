@@ -109,7 +109,7 @@ public class FoodTruckFacadeImpl implements FoodTruckFacade {
 	}
 
 	@Override
-	public List<ReadableFoodTruck> getExpiredLicence(String expired) {
+	public List<ReadableFoodTruck> getExpiredLicence() {
 		
 		List<FoodTruck> source = service.getByApplicant("EXPIRED");
 
