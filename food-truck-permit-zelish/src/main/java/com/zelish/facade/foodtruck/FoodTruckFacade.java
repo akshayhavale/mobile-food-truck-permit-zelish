@@ -26,6 +26,6 @@ public interface FoodTruckFacade {
 	
 	public List<ReadableFoodTruck> getByStatus(String status);
 	
-	public List<ReadableFoodTruck> getExpiredLicence(String expired);
+	public List<ReadableFoodTruck> getExpiredLicence();
 
 }
