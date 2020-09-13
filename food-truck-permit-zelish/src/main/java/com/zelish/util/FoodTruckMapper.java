@@ -31,7 +31,7 @@ public class FoodTruckMapper {
 		target.setStatus(source.getStatus());
 		target.setX(source.getX());
 		target.setY(source.getY());
-		target.setId(source.getId());
+		
 		return target;
 	}
 

@@ -88,7 +88,7 @@ public class FoodTruckFacadeImpl implements FoodTruckFacade {
 	@Override
 	public List<ReadableFoodTruck> getByFacilityType(String facilityType) {
 		
-		List<FoodTruck> source = service.getByApplicant(facilityType);
+		List<FoodTruck> source = service.getByFacilityType(facilityType);
 
 		List<ReadableFoodTruck> target = new ArrayList<ReadableFoodTruck>();
 
@@ -99,7 +99,7 @@ public class FoodTruckFacadeImpl implements FoodTruckFacade {
 
 	@Override
 	public List<ReadableFoodTruck> getByStatus(String status) {
-		List<FoodTruck> source = service.getByApplicant(status);
+		List<FoodTruck> source = service.getByStatus(status);
 
 		List<ReadableFoodTruck> target = new ArrayList<ReadableFoodTruck>();
 
@@ -111,7 +111,7 @@ public class FoodTruckFacadeImpl implements FoodTruckFacade {
 	@Override
 	public List<ReadableFoodTruck> getExpiredLicence() {
 		
-		List<FoodTruck> source = service.getByApplicant("EXPIRED");
+		List<FoodTruck> source = service.getByStatus("EXPIRED");
 
 		List<ReadableFoodTruck> target = new ArrayList<ReadableFoodTruck>();
 
