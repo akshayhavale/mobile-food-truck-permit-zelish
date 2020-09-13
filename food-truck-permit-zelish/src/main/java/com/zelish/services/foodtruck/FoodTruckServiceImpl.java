@@ -2,60 +2,65 @@ package com.zelish.services.foodtruck;
 
 import java.util.List;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import com.zelish.model.FoodTruck;
+import com.zelish.repository.FoodTruckRepository;
+import com.zelish.util.FoodTruckMapper;
 
 @Service
-public class FoodTruckServiceImpl implements FoodTruckService{
-	
+public class FoodTruckServiceImpl implements FoodTruckService {
+
+	@Autowired
+	private FoodTruckRepository repository;
 
 	@Override
 	public FoodTruck create(FoodTruck foodTruck) {
-		// TODO Auto-generated method stub
-		return null;
+		return repository.save(foodTruck);
 	}
 
 	@Override
-	public FoodTruck update(FoodTruck foodTruck, long locationid) {
-		// TODO Auto-generated method stub
-		return null;
+	public FoodTruck update(FoodTruck source, long locationid) {
+
+		FoodTruck target = repository.getOne(locationid);
+		FoodTruckMapper mapper = new FoodTruckMapper();
+
+		FoodTruck saveEntity = mapper.map(source, target);
+		return repository.save(saveEntity);
 	}
 
 	@Override
 	public FoodTruck getOne(long locationid) {
-		// TODO Auto-generated method stub
-		return null;
+		return repository.findById(locationid).get();
 	}
 
 	@Override
 	public List<FoodTruck> getAll() {
-		// TODO Auto-generated method stub
-		return null;
+		return repository.findAll();
 	}
 
 	@Override
 	public void delete(long locationid) {
-		// TODO Auto-generated method stub
-		
+
+		repository.deleteById(locationid);
+
 	}
 
 	@Override
 	public List<FoodTruck> getByApplicant(String applicant) {
-		// TODO Auto-generated method stub
-		return null;
+		
+		return repository.findByApplicant(applicant);
 	}
 
 	@Override
 	public List<FoodTruck> getByFacilityType(String facilityType) {
-		// TODO Auto-generated method stub
-		return null;
+		return repository.findByFacilityType(facilityType);
 	}
 
 	@Override
 	public List<FoodTruck> getByStatus(String status) {
-		// TODO Auto-generated method stub
-		return null;
+		return repository.findByStatus(status);
 	}
 
 }
