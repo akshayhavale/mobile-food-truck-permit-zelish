@@ -30,13 +30,13 @@ public class ReadableFoodTruck {
 
 	private String foodItems;
 
-	private int x;
+	private double x;
 
-	private int y;
+	private double y;
 
-	private int latitude;
+	private double latitude;
 
-	private int longitude;
+	private double longitude;
 
 	private String schedule;
 
@@ -140,35 +140,35 @@ public class ReadableFoodTruck {
 		this.foodItems = foodItems;
 	}
 
-	public int getX() {
+	public double getX() {
 		return x;
 	}
 
-	public void setX(int x) {
+	public void setX(double x) {
 		this.x = x;
 	}
 
-	public int getY() {
+	public double getY() {
 		return y;
 	}
 
-	public void setY(int y) {
+	public void setY(double y) {
 		this.y = y;
 	}
 
-	public int getLatitude() {
+	public double getLatitude() {
 		return latitude;
 	}
 
-	public void setLatitude(int latitude) {
+	public void setLatitude(double latitude) {
 		this.latitude = latitude;
 	}
 
-	public int getLongitude() {
+	public double getLongitude() {
 		return longitude;
 	}
 
-	public void setLongitude(int longitude) {
+	public void setLongitude(double longitude) {
 		this.longitude = longitude;
 	}
 

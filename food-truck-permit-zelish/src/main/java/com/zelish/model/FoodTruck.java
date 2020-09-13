@@ -51,20 +51,20 @@ public class FoodTruck {
 	@Column(name = "STATUS")
 	private String status;
 
-	@Column(name = "FOODITEMS", length = 200)
+	@Column(name = "FOODITEMS",length = 5000)
 	private String foodItems;
 
 	@Column(name = "X")
-	private int x;
+	private double x;
 
 	@Column(name = "Y")
-	private int y;
+	private double y;
 
 	@Column(name = "LATITUDE")
-	private int latitude;
+	private double latitude;
 
 	@Column(name = "LONGITUDE")
-	private int longitude;
+	private double longitude;
 
 	@Column(name = "SCHEDULE")
 	private String schedule;
@@ -97,7 +97,7 @@ public class FoodTruck {
 
 	public FoodTruck(Long id, Long locationid, String applicant, String facultyType, long cnn,
 			String locationDescription, String address, String blocklot, String block, String lot, String status,
-			String foodItems, int x, int y, int latitude, int longitude, String schedule, Date noiSent, Date approved,
+			String foodItems, double x, double y, double latitude, double longitude, String schedule, Date noiSent, Date approved,
 			Date received, boolean priorPermit, Date expirationDate, Location location) {
 		super();
 		this.id = id;
@@ -221,35 +221,35 @@ public class FoodTruck {
 		this.foodItems = foodItems;
 	}
 
-	public int getX() {
+	public double getX() {
 		return x;
 	}
 
-	public void setX(int x) {
+	public void setX(double x) {
 		this.x = x;
 	}
 
-	public int getY() {
+	public double getY() {
 		return y;
 	}
 
-	public void setY(int y) {
+	public void setY(double y) {
 		this.y = y;
 	}
 
-	public int getLatitude() {
+	public double getLatitude() {
 		return latitude;
 	}
 
-	public void setLatitude(int latitude) {
+	public void setLatitude(double latitude) {
 		this.latitude = latitude;
 	}
 
-	public int getLongitude() {
+	public double getLongitude() {
 		return longitude;
 	}
 
-	public void setLongitude(int longitude) {
+	public void setLongitude(double longitude) {
 		this.longitude = longitude;
 	}
 

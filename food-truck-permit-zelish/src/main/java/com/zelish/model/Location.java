@@ -15,12 +15,12 @@ public class Location {
 
 	@ElementCollection
 	@Column(name = "COORDINATES")
-	private List<Integer> coordinates = new ArrayList<Integer>();
+	private List<Double> coordinates = new ArrayList<Double>();
 
 	public Location() {
 	}
 
-	public Location(String type, List<Integer> coordinates) {
+	public Location(String type, List<Double> coordinates) {
 		super();
 		this.type = type;
 		this.coordinates = coordinates;
@@ -34,11 +34,11 @@ public class Location {
 		this.type = type;
 	}
 
-	public List<Integer> getCoordinates() {
+	public List<Double> getCoordinates() {
 		return coordinates;
 	}
 
-	public void setCoordinates(List<Integer> coordinates) {
+	public void setCoordinates(List<Double> coordinates) {
 		this.coordinates = coordinates;
 	}
 
