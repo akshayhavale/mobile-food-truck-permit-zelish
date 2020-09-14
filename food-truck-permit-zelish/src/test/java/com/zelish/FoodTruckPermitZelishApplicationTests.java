@@ -152,7 +152,7 @@ public class FoodTruckPermitZelishApplicationTests {
 	@Test
 	public void getByStatus() throws ParseException {
 
-		final String url = "http://localhost:8080/api/v1/foodtruck/status/APPROVED";
+		final String url = "http://localhost:8080/api/v1/foodtruck/status?status=APPROVED";
 
 		RestTemplate rest = new RestTemplate();
 
@@ -168,7 +168,7 @@ public class FoodTruckPermitZelishApplicationTests {
 	@Test
 	public void getByFacilityType() throws ParseException {
 
-		final String url = "http://localhost:8080/api/v1/foodtruck/facility/Truck";
+		final String url = "http://localhost:8080/api/v1/foodtruck/facility?facilityType=Truck";
 
 		RestTemplate rest = new RestTemplate();
 
@@ -184,7 +184,7 @@ public class FoodTruckPermitZelishApplicationTests {
 	@Test
 	public void getByApplicant() throws ParseException {
 
-		final String url = "http://localhost:8080/api/v1/foodtruck/applicant/Street Mee";
+		final String url = "http://localhost:8080/api/v1/foodtruck/applicant?applicant=Street Mee";
 
 		RestTemplate rest = new RestTemplate();
 
