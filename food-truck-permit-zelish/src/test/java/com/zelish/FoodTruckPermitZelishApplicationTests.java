@@ -163,6 +163,7 @@ public class FoodTruckPermitZelishApplicationTests {
 
 		assertEquals(200, 200);
 	}
+	
 
 	// get By facilityType
 	@Test
