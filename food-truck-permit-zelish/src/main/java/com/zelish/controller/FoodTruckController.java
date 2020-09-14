@@ -141,10 +141,10 @@ public class FoodTruckController {
 		foodTruckFacade.deleteByid(id);
 	}
 	
-	@GetMapping("/foodtruck/applicant/{applicant}")
+	@GetMapping("/foodtruck/applicant")
 	@ResponseStatus(code = HttpStatus.OK)
 	@ApiOperation(httpMethod = "GET", value = "Get Details By Applicant, This will Get Food Truck Entity By Applicant", produces = "application/json", response = ReadableFoodTruckList.class)
-	public @ResponseBody ReadableFoodTruckList getByApplicant(@PathVariable(name = "applicant") String applicant) throws ResourceNotFoundException {
+	public @ResponseBody ReadableFoodTruckList getByApplicant(@RequestParam String applicant) throws ResourceNotFoundException {
 		try {
 			List<ReadableFoodTruck> list = foodTruckFacade.getByApplicant(applicant);
 			ReadableFoodTruckList readableFoodTruckList = new ReadableFoodTruckList();
@@ -160,10 +160,10 @@ public class FoodTruckController {
 		}
 	}
 	
-	@GetMapping("/foodtruck/facility/{facilityType}")
+	@GetMapping("/foodtruck/facility")
 	@ResponseStatus(code = HttpStatus.OK)
 	@ApiOperation(httpMethod = "GET", value = "Get Details By facilityType, This will Get Food Truck Entity By facilityType", produces = "application/json", response = ReadableFoodTruckList.class)
-	public @ResponseBody ReadableFoodTruckList getByFacility(@PathVariable(name = "facilityType") String facilityType) throws ResourceNotFoundException {
+	public @ResponseBody ReadableFoodTruckList getByFacility(@RequestParam String facilityType) throws ResourceNotFoundException {
 		try {
 			List<ReadableFoodTruck> list = foodTruckFacade.getByFacilityType(facilityType);
 			ReadableFoodTruckList readableFoodTruckList = new ReadableFoodTruckList();
@@ -179,10 +179,10 @@ public class FoodTruckController {
 		}
 	}
 	
-	@GetMapping("/foodtruck/status/{status}")
+	@GetMapping("/foodtruck/status")
 	@ResponseStatus(code = HttpStatus.OK)
 	@ApiOperation(httpMethod = "GET", value = "Get Details By status, This will Get Food Truck Entity By status", produces = "application/json", response = ReadableFoodTruckList.class)
-	public @ResponseBody ReadableFoodTruckList getByStatus(@PathVariable(name = "status") String status) throws ResourceNotFoundException {
+	public @ResponseBody ReadableFoodTruckList getByStatus(@RequestParam String status) throws ResourceNotFoundException {
 		try {
 			List<ReadableFoodTruck> list = foodTruckFacade.getByStatus(status);
 			ReadableFoodTruckList readableFoodTruckList = new ReadableFoodTruckList();
