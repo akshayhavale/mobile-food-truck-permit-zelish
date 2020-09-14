@@ -123,8 +123,8 @@ Example:- http://localhost:8080/api/v1/foodtruck/1
 4. **TO GET FOODTRUCK BY STATUS**
 
 METHOD - GET
-URL - http://localhost:8080/api/v1/foodtruck/status?status=approved
-Example:- http://localhost:8080/api/v1/foodtruck/status/APPROVED
+URL - http://localhost:8080/api/v1/foodtruck/status
+Example:- http://localhost:8080/api/v1/foodtruck/status?status=approved
 
 5. **TO GET ALL FOODTRUCKS **
 
