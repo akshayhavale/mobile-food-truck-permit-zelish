@@ -135,7 +135,7 @@ URL - http://localhost:8080//api/v1/foodtrucks
 
 METHOD - GET
 URL - http://localhost:8080/api/v1/foodtruck/facility
-Example:- http://localhost:8080/api/v1/foodtruck/facility?facilityType=port
+Example:- http://localhost:8080/api/v1/foodtruck/facility?facilityType=push
 
 
 7. **TO GET BY APPLICANT**
