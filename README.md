@@ -123,7 +123,7 @@ Example:- http://localhost:8080/api/v1/foodtruck/1
 4. **TO GET FOODTRUCK BY STATUS**
 
 METHOD - GET
-URL - http://localhost:8080/api/v1/foodtruck/status/{status}
+URL - http://localhost:8080/api/v1/foodtruck/status?status=approved
 Example:- http://localhost:8080/api/v1/foodtruck/status/APPROVED
 
 5. **TO GET ALL FOODTRUCKS **
@@ -134,15 +134,15 @@ URL - http://localhost:8080//api/v1/foodtrucks
 6. **TO GET BY FACILITY TYPE**
 
 METHOD - GET
-URL - http://localhost:8080/api/v1/foodtruck/facility/{facilityType}
-Example:- http://localhost:8080/api/v1/foodtruck/facility/Truck
+URL - http://localhost:8080/api/v1/foodtruck/facility
+Example:- http://localhost:8080/api/v1/foodtruck/facility?facilityType=port
 
 
 7. **TO GET BY APPLICANT**
 
 METHOD - GET
-URL - http://localhost:8080/api/v1/foodtruck/applicant/{applicant}
-Example:- http://localhost:8080/api/v1/foodtruck/applicant/MOMO INNOVATION LLC
+URL - http://localhost:8080/api/v1/foodtruck/applicant
+Example:- http://localhost:8080/api/v1/foodtruck/applicant?applicant=hm
 
 8. **TO GET ALL EXPIRED LICENCE FOOD TRUCKS**
 
